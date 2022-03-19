@@ -7,19 +7,28 @@ import {AiTwotoneStar, AiOutlineStar} from 'react-icons/ai'
 const SingleItem = ({ item }) => {
   return (
     <div className='item-container'>
-      <p>{item.images[0]}</p>
-      <img src={item.images[0]} alt="Product Image" />
-      <p>{item.title}</p>
-      <div>
-        <div>
+      <div className="image-container">
+        <img src={item.image} alt="Product Image" />
+      </div>
+      
+      <div className='item-title'>{item.title}</div>
+
+
+      <div className='rating-and-price'>
+        <div className='stars-rating'>
         {[...Array(5)].map((_, i) => (
             <span key={i}>
-                { item.rating < i ? <AiOutlineStar/> : <AiTwotoneStar/>}
+                { item.rating.rate < i ? <AiOutlineStar/> : <AiTwotoneStar/>}
             </span>
         ))}
+        <span>{item.rating.count}</span>
         </div>
-        <p>{item.price}</p>
+        <div className='item-price'>{item.price}</div>
       </div>
+
+      <button className='add-to-cart-button'>Add to cart</button>
+
+
     </div>
   )
 }

@@ -18,9 +18,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <img src='https://dummyjson.com/image/i/products/1/1.jpg' alt="Product Image" />
-
-
+   
       <SideFilters/>
       <div className='items-container'>
         {items.map((i) => {

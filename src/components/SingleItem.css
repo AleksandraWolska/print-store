@@ -1,7 +1,45 @@
 .item-container {
-    width: 350px;
+    width: 300px;
     height: 400px;
     border: 1px solid black;
-    margin: 15px;
+    margin: 10px;
+
+  
+
     
+}
+
+.item-container img {
+    width: 95%;
+    justify-self: center;
+}
+
+.image-container {
+    width: 95%;
+    height: 60%;  
+    overflow: hidden;
+    padding: 15px;
+}
+
+.item-title{
+    height: 2.5em;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.rating-and-price {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+.add-to-cart-button{
+
+    width: 100%;
+    padding: 10px 0px;
+
+
 }

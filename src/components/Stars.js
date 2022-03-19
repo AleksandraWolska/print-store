@@ -8,7 +8,7 @@ const Stars = ( {rating, onClick} ) => {
         <>
         {[...Array(5)].map((_, i) => (
             <span key={i} onClick={() => onClick(i)}>
-                { rating < i ? <AiOutlineStar/> : <AiTwotoneStar/>}
+                { rating.rate < i ? <AiOutlineStar/> : <AiTwotoneStar/>}
             </span>
         ))}
 
