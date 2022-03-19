@@ -7,18 +7,6 @@ const SideFilters = () => {
 
   const [stars, setStars] = useState(3)
 
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className="filter-container">
       <span className="filter-title">Filters</span>

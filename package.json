@@ -1,7 +1,7 @@
 {
   "name": "print-store",
   "version": "0.1.0",
-  "homepage": "https://aleksandrawolska.github.io/store.io/",
+  "homepage": "https://aleksandrawolska.github.io/store.io/react-gh-pages",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -19,6 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
