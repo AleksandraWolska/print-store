@@ -1,7 +1,7 @@
 {
   "name": "print-store",
   "version": "0.1.0",
-  "homepage": "https://aleksandrawolska.github.io/store.io/react-gh-pages",
+  "homepage": "https://aleksandrawolska.github.io/store.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -42,5 +42,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://dummyjson.com/"
+  "proxy": "https://dummyjson.com/",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
 }
