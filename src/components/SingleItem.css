@@ -36,10 +36,31 @@
     padding: 15px 30px;
 }
 
-.add-to-cart-button{
+.cart-button {
 
     width: 100%;
     padding: 10px 0px;
 
 
+}
+.add-to-cart-button{
+
+    background-color: antiquewhite;
+
+
+}
+.remove-from-cart-button{
+
+    background-color: grey;
+
+}
+
+
+.item-container {
+    
+    border-radius: 5px;
+    border: 0.5px solid #dddddd;
+    padding: 5px;
+
+    
 }

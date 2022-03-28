@@ -8,23 +8,48 @@ import { Link } from 'react-router-dom'
 
 
 import "./Header.css"
+import { CartState } from './context/Context'
 
 const Header = () => {
+
+    const {
+        state: { cartState },
+        dispatch,
+        sortDispatch
+    } = CartState()
+
+
+
     return (
 
         <div className="header">
-            <a href="#"><img className="dot" src={dot} /></a>
+
+            <Link to="/">
+                <img className="dot" src={dot} />
+            </Link>
+            
             
 
                
             
-            <ul class="header-main">
+            <ul className="header-main">
                 
                 <li> 
                     <div className="search-wrapper">
-                        <img class="search-icon" src={loupe}/>
-                        <input type="text" placeholder="Search..." className="search-bar" />
-                        <img class="clear-icon" src={close}/>
+                        <img className="search-icon" src={loupe}/>
+                        <input 
+                        onFocus= {(ev) => { ev.target.value = ""}}
+                        onChange={ev => {
+                            sortDispatch({
+                                type: "filterBySearch",
+                                payload: ev.target.value
+                            })
+                        }}
+                        type="text" 
+                        placeholder="Search..." 
+                        className="search-bar" 
+                        />
+                        <img className="clear-icon" src={close}/>
                     </div>
                 </li>
                 <li className="cart-btn">

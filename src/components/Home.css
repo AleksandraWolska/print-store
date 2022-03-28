@@ -5,7 +5,7 @@
 .items-container {
     display: flex;
     width: 70%;
-    padding: 20px;
+    padding: 10px;
     flex-wrap: wrap;
     justify-content: space-around;
 }

@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, createContext } from 'react'
-import { cartReducer } from './Reducers'
+import { cartReducer, sortReducer } from './Reducers'
 
 
 const CartContext = createContext()
@@ -27,7 +27,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 3.9,
             "count": 120
-          }
+          },
+          "quantity": 4
         },
         {
           "id": 2,
@@ -39,7 +40,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 4.1,
             "count": 259
-          }
+          },
+          "quantity": 7
         },
         {
           "id": 3,
@@ -51,7 +53,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 4.7,
             "count": 500
-          }
+          },
+          "quantity": 2
         },
         {
           "id": 4,
@@ -63,7 +66,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 2.1,
             "count": 430
-          }
+          },
+          "quantity": 85
         },
         {
           "id": 5,
@@ -75,7 +79,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 4.6,
             "count": 400
-          }
+          },
+          "quantity": 46
         },
         {
           "id": 6,
@@ -87,7 +92,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 3.9,
             "count": 70
-          }
+          },
+          "quantity": 14
         },
         {
           "id": 7,
@@ -99,7 +105,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 3,
             "count": 400
-          }
+          },
+          "quantity": 0
         },
         {
           "id": 8,
@@ -111,7 +118,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 1.9,
             "count": 100
-          }
+          },
+          "quantity": 44
         },
         {
           "id": 9,
@@ -123,7 +131,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 3.3,
             "count": 203
-          }
+          },
+          "quantity": 37
         },
         {
           "id": 10,
@@ -135,7 +144,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 2.9,
             "count": 470
-          }
+          },
+          "quantity": 2
         },
         {
           "id": 11,
@@ -147,7 +157,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 4.8,
             "count": 319
-          }
+          },
+          "quantity": 53
         },
         {
           "id": 12,
@@ -159,7 +170,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 4.8,
             "count": 400
-          }
+          },
+          "quantity": 19
         },
         {
           "id": 13,
@@ -171,7 +183,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 2.9,
             "count": 250
-          }
+          },
+          "quantity": 0
         },
         {
           "id": 14,
@@ -183,7 +196,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 2.2,
             "count": 140
-          }
+          },
+          "quantity": 4
         },
         {
           "id": 15,
@@ -195,7 +209,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 2.6,
             "count": 235
-          }
+          },
+          "quantity": 0
         },
         {
           "id": 16,
@@ -207,7 +222,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 2.9,
             "count": 340
-          }
+          },
+          "quantity": 6
         },
         {
           "id": 17,
@@ -219,7 +235,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 3.8,
             "count": 679
-          }
+          },
+          "quantity": 56
         },
         {
           "id": 18,
@@ -231,7 +248,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 4.7,
             "count": 130
-          }
+          },
+          "quantity": 4
         },
         {
           "id": 19,
@@ -243,7 +261,8 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 4.5,
             "count": 146
-          }
+          },
+          "quantity": 0
         },
         {
           "id": 20,
@@ -255,19 +274,28 @@ const Context = ({ children }) => {
           "rating": {
             "rate": 3.6,
             "count": 145
-          }
+          },
+          "quantity": 18
         }
       ]
 
-        //useResucer returns current state with dispatch method
+        //handle items added to cart
     const [state, dispatch] = useReducer(cartReducer, {
         items: items,
         cartArray: []
     })
 
 
+    //handle filters
+    const [sortState, sortDispatch] = useReducer(sortReducer, {
+      byAvailable: false,
+      byRating: 0,
+      bySearch: ""
+    })
+
+
     return (
-        <CartContext.Provider value={{ state, dispatch }}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{ state, dispatch, sortState, sortDispatch }}>{children}</CartContext.Provider>
     )
 }
 

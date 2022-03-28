@@ -13,10 +13,9 @@ function App() {
         <BrowserRouter>
         <Header />
             <Routes>
-                <Route path="/" exact element={<Home/>}>
+                <Route path="/" exact element={<Home/>}/>
+                <Route path="/cart" exact element={<Cart/>}/>
 
-                <Route path="/cart" exact element={<Cart/>}  />
-                </Route>
             </Routes>
         </BrowserRouter>
     );
