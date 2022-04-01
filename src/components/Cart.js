@@ -11,9 +11,17 @@ const Cart = () => {
     dispatch,
   } = CartState();
 
+
+  
   const sumUp = () => {
     let sum = 0;
     cartArray.map((item) => (sum += item.price * item.cartQuantity));
+    return sum.toFixed(2);
+  };
+
+  const sumQuantity = () => {
+    let sum = 0;
+    cartArray.map((item) => (sum += item.cartQuantity));
     return sum;
   };
 
@@ -32,14 +40,16 @@ const Cart = () => {
               <div className="quantity">
                 <BiMinus
                 className="icon"
-                  onClick={() =>
-                    dispatch({
+                  onClick={() => {
+                      dispatch({
                       type: "changeCartQuantity",
                       payload: {
                         id: item.id,
                         cartQuantity: item.cartQuantity - 1,
                       },
                     })
+                  }
+                  
                   }
                 />
                 <input
@@ -55,14 +65,16 @@ const Cart = () => {
                 ></input>
                 <BiPlus
                 className="icon"
-                  onClick={() =>
-                    dispatch({
+                  onClick={() => {
+                     dispatch({
                       type: "changeCartQuantity",
                       payload: {
                         id: item.id,
                         cartQuantity: parseInt(item.cartQuantity) + 1,
                       },
                     })
+                  }
+                   
                   }
                 />
               </div>
@@ -81,11 +93,15 @@ const Cart = () => {
       </div>
 
       <div className="summary-container">
-        <div className="summary-quantity">
-          Items in cart: {cartArray.length}
+        <div className="summary-text">
+          <div className="summary-quantity">
+          Items in cart: {sumQuantity()}
+          </div>
+          <div className="summary-price">Total: {sumUp()}</div>
+        <div className="proceed-button">Proceed to checkout</div>
+
         </div>
-        <div className="summary-price">Total: {sumUp()}</div>
-        <button>Proceed to checkout</button>
+       
         
       </div>
     </div>

@@ -23,19 +23,12 @@ const DropdownCart = () => {
 
     return (
 
-        
-        <div
-            className="cart-total"
-            
-            onMouseEnter={() => setDropdown(true)}
-            onMouseLeave={() => setDropdown(false)}
-        >
-            <div className="dropdown-cart-button">
+            <div className="dropdown-cart-button" onMouseEnter={() => setDropdown(true)} onMouseLeave={() => setDropdown(false)}>
 
                 <Link to="/cart">
                     <div className="dropdown-cart-icons" onClick={() => setDropdown(false)}>
                         <FaShoppingCart className="cart-icon" />
-                        <div>{cartArray.length}</div>
+                        <span className='quantity-number'>{cartArray.length}</span>
                         <FaChevronDown className="down-icon" />
                     </div>
                 </Link>
@@ -68,7 +61,7 @@ const DropdownCart = () => {
 
                         
                 <Link to="/cart">
-                   <button>Idz do kart</button>
+                   <div className='go-to-cart'>Go to cart</div>
                 </Link>
 
                     </div>
@@ -83,9 +76,6 @@ const DropdownCart = () => {
 
             </div>
 
-
-
-        </div>
     )
 }
 

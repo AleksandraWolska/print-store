@@ -1,27 +1,23 @@
 .cart-home{
     display: flex;
     flex-direction: row;
-    
+    justify-content: space-between;
+    width: 100vw;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
 
 }
 
-
-
 .cart-items-container{
-    width: 70vw;
-    
-    padding:30px;
+    width: 65%;
+
 }
 
 .summary-container {
-    width: 30vw;
-    background-color:darkkhaki;
-    padding: 30px;
+    width: 30%;
+  
+    background-image: linear-gradient(to left, #ffffff 0%, #53346D 300%);
 }
-
-
-
-
 
 .summary-item{
     height: 150px;
@@ -30,19 +26,27 @@
     justify-content: space-around;
     align-items: center;
     border-bottom: 0.5px solid gray;
-    padding: 10px
+    padding: 5px;
+    
+    
 }
 
 .summary-item .title {
-    width: 250px;
+    width: 25%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    
+    
 }
 .summary-item .price {
-    width: 70px;
+    width: 7%;
 }
 
 .summary-item .image-container {
-    height: 100%;
-    width: 120px;
+    height: 80%;
+    width: 10%;
     overflow: hidden;
     
     display: flex;
@@ -51,10 +55,12 @@
 }
 .summary-item .image {
     max-height: 100%;
+
 }
 
 .summary-item .quantity {
-    width: 100px;
+    width: 10%;
+    min-width: 75px;
     display: flex;
     justify-content: space-between;
 
@@ -64,7 +70,7 @@
     cursor: pointer;
 }
 .summary-item .input-quantity {
-    width: 55px;
+    width: 20px;
     border: 0.2px solid #cccccc;
     border-radius: 3px;
     text-align: center;
@@ -80,4 +86,62 @@
     text-align: center;
 
 
+}
+
+.summary-text {
+    padding: 30px;
+    font-size: 1.3rem;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.proceed-button {
+    background-image: linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%);
+    padding: 10px 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 7px;
+    
+}
+
+.proceed-button:hover {
+background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1920px){
+    .home {
+        max-width: 1920px;
+		margin-left: auto;
+		margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .cart-home{
+        flex-direction: column;
+    }
+    .cart-items-container {
+        width: 100vw;
+        padding: 10px;
+    }
+    .summary-container {
+        width: 100vw;
+    }
 }

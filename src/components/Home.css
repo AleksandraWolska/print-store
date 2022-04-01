@@ -1,5 +1,15 @@
 .home {
     display: flex;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+@media only screen and (min-width: 1920px){
+    .home {
+        max-width: 1920px;
+		margin-left: auto;
+		margin-right: auto;
+    }
 }
 
 .items-container {
@@ -8,4 +18,13 @@
     padding: 10px;
     flex-wrap: wrap;
     justify-content: space-around;
+    
+    
 }
+
+@media only screen and (max-width: 769px){
+    .items-container {
+        width: 95%;
+        }
+}
+
