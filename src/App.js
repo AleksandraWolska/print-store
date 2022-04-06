@@ -1,22 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './components/Header';
-import { Router, HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Cart from './components/Cart';
 import About from './components/About';
 
 function App() {
 
-
-
     return (
         <HashRouter>
-        <Header />
+            <Header />
             <Routes>
-                <Route path="/" exact element={<Home/>}/>
-                <Route path="/cart" exact element={<Cart/>}/>
-                <Route path="/about" exact element={<About/>}/>
+                <Route path="/" exact element={<Home />} />
+                <Route path="/cart" exact element={<Cart />} />
+                <Route path="/about" exact element={<About />} />
             </Routes>
         </HashRouter>
     );

@@ -1,30 +1,34 @@
 .home {
-    display: flex;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-}
-
-@media only screen and (min-width: 1920px){
-    .home {
-        max-width: 1920px;
-		margin-left: auto;
-		margin-right: auto;
-    }
+  display: flex;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  
 }
 
 .items-container {
-    display: flex;
-    width: 70%;
-    padding: 10px;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
-    
+  display: flex;
+  width: 70vw;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: min-content;
+  
 }
 
-@media only screen and (max-width: 769px){
-    .items-container {
-        width: 95%;
-        }
+
+
+@media only screen and (min-width: 1920px) {
+  .home {
+    width: 1900px;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content
+  }
 }
 
+
+@media only screen and (max-width: 769px) {
+  .items-container {
+    width: 95%;
+  }
+}

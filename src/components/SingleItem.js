@@ -13,10 +13,6 @@ const SingleItem = ({ item }) => {
     dispatch,
   } = CartState()
 
-
-  console.log(cartArray)
-
-
   return (
     <div className='item-container'>
       <div className="image-container">
@@ -35,7 +31,7 @@ const SingleItem = ({ item }) => {
         ))}
         <span>{item.rating.count}</span>
         </div>
-        <div className='item-price'>{item.price}</div>
+        <div className='item-price'>${item.price}</div>
       </div>
 
       {
@@ -47,11 +43,6 @@ const SingleItem = ({ item }) => {
           : <div className='out-of-stock'>Out of stock!</div>
         )
       }
-
-
-      
-
-      
     </div>
   )
 }

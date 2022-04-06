@@ -1,117 +1,103 @@
 .item-container {
-    font-size: 0.9em;
-    width: 240px;
-    height: 370px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 0.5px solid #dddddd;
-    padding: 5px;
-    background-color: white;
+  font-size: 0.9em;
+  width: 240px;
+  height: 370px;
+  margin: 10px;
+  border-radius: 5px;
 
+  padding: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .item-container img {
-    width: 95%;
-    justify-self: center;
+  width: 95%;
+  justify-self: center;
 }
 
 .image-container {
-    width: 95%;
-    height: 60%;  
-    overflow: hidden;
-    padding: 4%;
+  width: 95%;
+  height: 60%;
+  overflow: hidden;
+  padding: 4%;
 }
 
-.item-title{
-    
-    height: 3em;
-    margin: 7px;
-    text-align: center;
-    overflow: hidden;
+.item-title {
+  height: 3em;
+  margin: 7px;
+  text-align: center;
+  overflow: hidden;
 }
-
 
 .rating-and-price {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 4px 15px 10px 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4px 15px 10px 4px;
 }
 
 .cart-button {
-
-    width: 100%;
-    padding: 10px 0px;
-
-
+  width: 100%;
+  padding: 10px 0px;
 }
-.add-to-cart-button{
+.add-to-cart-button {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    #53346d -100%,
+    #ffffff 60%,
+    #53346d 300%
+  );
 
-    cursor: pointer;
-    background-image: linear-gradient(to right, #53346D -100%, #ffffff 60%, #53346D 300%);
-    
-    padding: 10px 10px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: rgb(0, 0, 0);            
-    border: 0px;
-    border-radius: 7px;
-
-    
-   
+  padding: 10px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);
+  border: 0px;
+  border-radius: 7px;
 }
 
 .add-to-cart-button:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+  background-position: right center; /* change the direction of the change here */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
-.remove-from-cart-button{
-    cursor: pointer;
+.remove-from-cart-button {
+  cursor: pointer;
 
-    background-color:#53346D;
-    border: 0px;
-    padding: 10px 10px;
-    text-align: center;
-    text-transform: uppercase;
+  background-color: #53346d;
+  border: 0px;
+  padding: 10px 10px;
+  text-align: center;
+  text-transform: uppercase;
 
-    color: white;            
-    
-    border-radius: 7px;
+  color: white;
 
+  border-radius: 7px;
 }
 
 .remove-from-cart-button:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
-
 
 @media only screen and (max-width: 769px) {
-    .item-container {
-        font-size: 0.8em;
-        width: 45%;
-        height: 360px;
-        
-       
-    
-    }
+  .item-container {
+    font-size: 0.8em;
+    width: 45%;
+    height: 360px;
+  }
 }
-
 
 @media only screen and (max-width: 510px) {
-    .item-container {
-        font-size: 0.8em;
-        width: 70vw;
-        
-       height: 370px;
+  .item-container {
+    font-size: 0.8em;
+    width: 70vw;
 
-    
-    }
+    height: 370px;
+  }
 }
-
-

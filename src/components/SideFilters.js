@@ -8,27 +8,25 @@ import { GrClose } from "react-icons/gr"
 
 const SideFilters = () => {
 
-    
+
     const { sortState: { sort, byAvailable, byRating }, sortDispatch } = CartState()
     const [showFilters, setShowFilters] = useState("desktop")
-    console.log(sort, byAvailable, byRating)
 
-    const checkScreenWidth = () => {window.innerWidth > 769  ? setShowFilters("desktop") : setShowFilters("mobile-hide")}
+
+    const checkScreenWidth = () => { window.innerWidth > 769 ? setShowFilters("desktop") : setShowFilters("mobile-hide") }
 
     let timeout = false
 
     const handleResize = () => {
-        clearTimeout(timeout)  
+        clearTimeout(timeout)
         timeout = setTimeout(checkScreenWidth, 100)
     }
-        
+
     useEffect(() => {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize)
     })
-   
-    
-    console.log("Filter showing: " + showFilters)
+
 
     return (
         <div className='filter-total'>
@@ -36,7 +34,7 @@ const SideFilters = () => {
             {(showFilters === "mobile-show" || window.innerWidth > 769) ?     //if the screen is big enough or show Filters is set to true
 
                 <div className="filter-container">
-                    <div className="close-icon" onClick={() => {setShowFilters("mobile-hide")}}>
+                    <div className="close-icon" onClick={() => { setShowFilters("mobile-hide") }}>
                         <GrClose size={20} />
                     </div>
 
@@ -69,32 +67,27 @@ const SideFilters = () => {
                     <div className="stars-container">
                         <div className="stars-title">Rating: </div>
 
-<div className='stars-icons'>
-                        <Stars 
-                        rating={byRating}
-                            onClick={(ev) => {
+                        <div className='stars-icons'>
+                            <Stars
+                                rating={byRating}
+                                onClick={(ev) => {
 
-                                sortDispatch({
-                                    type: "filterByRating",
-                                    payload: ev
-                                })
-                            }} />
-                    </div>
+                                    sortDispatch({
+                                        type: "filterByRating",
+                                        payload: ev
+                                    })
+                                }} />
+                        </div>
                     </div>
 
                     <div className="checkbox-container">
-
-
-            
-                            <input
-                                onChange={() => sortDispatch({ type: "filterByAvailable" })}
-                                checked={byAvailable}
-                                id="s1"
-                                type="checkbox"
-                                className="switch" />
-                            <label htmlFor="s1">Include out of stock</label>
-        
-
+                        <input
+                            onChange={() => sortDispatch({ type: "filterByAvailable" })}
+                            checked={byAvailable}
+                            id="s1"
+                            type="checkbox"
+                            className="switch" />
+                        <label htmlFor="s1">Include out of stock</label>
                     </div>
 
                     <button
@@ -104,15 +97,12 @@ const SideFilters = () => {
                             })}
                         className='clear-button'
                     >Clear Filters</button>
-                    
-
 
                 </div>
                 :
                 <div className="filter-icon" onClick={() => setShowFilters("mobile-show")}>
                     <BiFilterAlt size={35} />
                 </div>
-
             }
 
         </div>

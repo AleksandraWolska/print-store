@@ -16,33 +16,33 @@ const Home = () => {
     const reloadItems = () => {
         let newItems = items
         if (sort) {
-            
+
             newItems = newItems.sort((a, b) => (
-                sort === "priceAsc" ? a.price - b.price  : b.price - a.price
-            )) 
-        } 
+                sort === "priceAsc" ? a.price - b.price : b.price - a.price
+            ))
+        }
 
         if (!byAvailable) {
             newItems = newItems.filter((item) => item.quantity > 0)
         }
 
         if (byRating) {
-            newItems = newItems.filter( (item) => item.rating.rate >= byRating
-            
+            newItems = newItems.filter((item) => item.rating.rate >= byRating
+
             )
         }
 
-        if( bySearch) {
+        if (bySearch) {
             newItems = newItems.filter((item) => item.title.toLowerCase().includes(bySearch)
-            
+
             )
 
         }
         return newItems;
-        }
+    }
 
 
-    
+
 
     return (
         <div className="home">

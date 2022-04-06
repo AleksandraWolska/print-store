@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import dot from "./icons/dot.png"
+import React, { useState } from 'react'
 import loupe from "./icons/loupe.png"
 import close from "./icons/close.png"
 import DropdownCart from './DropdownCart'
@@ -7,16 +6,12 @@ import DropdownCart from './DropdownCart'
 import { FaBars, FaCircle, FaSearch } from "react-icons/fa"
 
 import { Link } from 'react-router-dom'
-
-
 import "./Header.css"
 import { CartState } from './context/Context'
 
 const Header = () => {
 
     const {
-        state: { cartState },
-        dispatch,
         sortDispatch
     } = CartState()
 
@@ -33,20 +28,14 @@ const Header = () => {
             <div className="header-contents">
                 <Link to="/">
                     <div className='dot'>
-
                         <FaCircle style={{ color: "white" }} />
-
                     </div>
                 </Link>
-
-
-
-
 
                 <div className="header-main">
                     <div className="search-container">
                         <div className={showSearch ? "search-wrapper-open" : "search-wrapper"}>
-                            <img className="search-icon" src={loupe} />
+                            <img className="search-icon" src={loupe} alt="search icon" />
                             <input id="input1"
                                 onFocus={(ev) => {
                                     ev.target.value = ""
@@ -65,7 +54,7 @@ const Header = () => {
                                 placeholder="Search..."
                                 className="search-bar"
                             />
-                            <img className="clear-icon" src={close} onClick={(ev) => {
+                            <img className="clear-icon" alt="close icon" src={close} onClick={(ev) => {
                                 setShowSearch(false)
                                 document.getElementById("input1").value = "";
                                 sortDispatch({
@@ -73,8 +62,6 @@ const Header = () => {
                                     payload: ""
                                 })
                             }} />
-
-
 
                         </div>
                         {
@@ -92,11 +79,9 @@ const Header = () => {
 
                     <div className={showMenu ? "menu-wrapper-open" : "menu-wrapper"}>
 
-                       
-                            <Link to="/about">
-                                <div onClick={() => setShowMenu(false)}>About</div>
-                            </Link>
-                      
+                        <Link to="/about">
+                            <div onClick={() => setShowMenu(false)}>About</div>
+                        </Link>
 
                         <div onClick={() => setShowMenu(false)}><a href="https://github.com/AleksandraWolska/store.io">Code</a></div>
                     </div>
