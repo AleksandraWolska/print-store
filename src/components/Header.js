@@ -29,6 +29,7 @@ const Header = () => {
                 <Link to="/">
                     <div className='dot'>
                         <FaCircle style={{ color: "white" }} />
+                        <span>store</span>
                     </div>
                 </Link>
 
