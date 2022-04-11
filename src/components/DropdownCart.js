@@ -23,7 +23,7 @@ const DropdownCart = () => {
 
     return (
 
-            <div className="dropdown-cart-button" onMouseEnter={() => setDropdown(true)} onMouseLeave={() => setDropdown(false)}>
+            <div className="dropdown-cart-button" onMouseEnter={() => setDropdown(true)} onMouseLeave={() => setDropdown(false)} >
 
                 <Link to="/cart">
                     <div className="dropdown-cart-icons" onClick={() => setDropdown(false)}>
