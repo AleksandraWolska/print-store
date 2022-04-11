@@ -1,69 +1,50 @@
 .about {
-    width: 80vw;
-    padding: 10vw;
-font-family: 'Courier New', Courier, monospace;
-
-    
+  width: 80vw;
+  padding: 10vw;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .about h1 {
-    margin: 0;
-    font-size: 40px;
-    background-color: rgba(83, 52, 109, .25);
-    
-    
-
+  margin: 0;
+  font-size: 40px;
+  background-color: rgba(83, 52, 109, 0.25);
 }
 
-.about a{
-    color: black;
+.about a {
+  color: black;
 }
 
 .about p {
-
-    
-    font-size: 18px;
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .about .highlight {
-    
-    background-color: rgba(83, 52, 109, .25);
-    padding-left: 3px;
-    padding-right: 3px;
-    
+  background-color: rgba(83, 52, 109, 0.25);
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
-
 @media only screen and (max-width: 769px) {
-    .about {
-        width: 80vw;
-        
-    }
+  .about {
+    width: 80vw;
+  }
 
-    .about p {
+  .about p {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    font-weight: 500;
+  }
 
-        overflow-wrap: break-word;
-        font-size: 15px;
-        font-weight: 500;
-    }
-
-
-    .about h1 {
-
-    
-        font-size: 35px;
-       
-    }
-    
+  .about h1 {
+    font-size: 35px;
+  }
 }
 
 @media only screen and (min-width: 1920px) {
-    .about {
-      max-width: 1920px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-
+  .about {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
   }
+}

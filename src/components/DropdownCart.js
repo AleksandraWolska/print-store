@@ -47,7 +47,7 @@ const DropdownCart = () => {
 
                                     <div className='cart-item-detail'>
                                         <div>{item.title}</div>
-                                        <div className="cart-item-price">{item.price}</div>
+                                        <div className="cart-item-price">${item.price}</div>
                                     </div>
                                     <div className="cart-item-remove">
                                         <FaTrashAlt size={30} onClick={() => dispatch({ type: "removeFromCart", payload: item })} />

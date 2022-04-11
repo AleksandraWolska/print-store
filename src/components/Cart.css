@@ -213,7 +213,6 @@ input[type="number"] {
   }
 }
 
-
 @media only screen and (min-width: 1920px) {
   .cart-home {
     max-width: 1920px;

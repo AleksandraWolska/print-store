@@ -24,7 +24,7 @@ const Cart = () => {
         return sum;
     };
 
-    
+
     return (
         <div className="cart-home">
             <div className="cart-items-container">

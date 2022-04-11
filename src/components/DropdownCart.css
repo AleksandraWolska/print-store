@@ -66,12 +66,17 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .cart-item-title {
   height: 20px;
   overflow: hidden;
 }
-
+.cart-item-price {
+  font-weight: 500;
+  font-size: 1.1em;
+  margin: 15px 0px 8px 0px;
+}
 .cart-item-image {
   max-height: 100%;
   max-width: 100%;
