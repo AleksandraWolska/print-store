@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-import downarrow from "./icons/down-arrow.png"
-
 import "./DropdownCart.css"
 import { CartState } from './context/Context'
 import { FaShoppingCart, FaTrashAlt, FaChevronDown } from 'react-icons/fa'
@@ -14,11 +11,11 @@ const DropdownCart = () => {
     const { state: { cartArray }, dispatch } = CartState()
     const [dropdown, setDropdown] = useState(false)
 
-    const toggleDropdown = () => {
-        setDropdown(!dropdown)
-        console.log("changed dropdown")
-        console.log(dropdown)
-    }
+    // const toggleDropdown = () => {
+    //     setDropdown(!dropdown)
+    //     console.log("changed dropdown")
+    //     console.log(dropdown)
+    // }
 
 
     return (
